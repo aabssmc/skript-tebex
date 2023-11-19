@@ -10,7 +10,7 @@ import ch.njol.skript.lang.Expression;
 import ch.njol.skript.lang.SkriptParser;
 import ch.njol.util.Kleenean;
 import com.google.gson.JsonObject;
-import lol.aabss.skripttebex.TebexAPI;
+import lol.aabss.skripttebex.other.TebexAPI;
 import org.bukkit.event.Event;
 import org.jetbrains.annotations.NotNull;
 
