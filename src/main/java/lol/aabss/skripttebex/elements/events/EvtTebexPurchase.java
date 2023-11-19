@@ -17,6 +17,8 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 
+import static lol.aabss.skripttebex.SkriptTebex.secretvalid;
+
 @Name("On Tebex Purchase")
 @Description("Called when a purchase happens")
 @Examples({
@@ -52,6 +54,10 @@ public class EvtTebexPurchase extends SkriptEvent {
 
     @Override
     public boolean check(@NotNull Event e) {
+        if (!secretvalid){
+            Skript.error("Invalid Tebex Secret. Edit in config.yml");
+            return false;
+        }
         return true;
     }
 
