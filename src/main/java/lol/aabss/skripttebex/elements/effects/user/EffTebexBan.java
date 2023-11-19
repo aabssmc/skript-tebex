@@ -13,6 +13,8 @@ import org.jetbrains.annotations.NotNull;
 import javax.annotation.Nullable;
 import java.io.IOException;
 
+import static lol.aabss.skripttebex.SkriptTebex.secretvalid;
+
 public class EffTebexBan extends Effect {
 
     static {
@@ -37,33 +39,38 @@ public class EffTebexBan extends Effect {
 
     @Override
     protected void execute(@NotNull Event e) {
-        try {
-            JsonObject body;
-            String r = null;
-            if (reason.getSingle(e) == null){
-                r = "Banned with no reason.";
+        if (secretvalid){
+            try {
+                JsonObject body;
+                String r;
+                if (reason.getSingle(e) == null){
+                    r = "Banned with no reason.";
+                }
+                else{
+                    r = reason.getSingle(e);
+                }
+                if (isIP){
+                    body = new JsonObject();
+                    body.addProperty("reason", r);
+                    body.addProperty("ip", banner.getSingle(e));
+                }
+                else{
+                    body = new JsonObject();
+                    body.addProperty("reason", r);
+                    body.addProperty("user", banner.getSingle(e));
+                }
+                TebexAPI.api("bans", "POST", body);
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
             }
-            else{
-                r = reason.getSingle(e);
-            }
-            if (isIP){
-                body = new JsonObject();
-                body.addProperty("reason", r);
-                body.addProperty("ip", banner.getSingle(e));
-            }
-            else{
-                body = new JsonObject();
-                body.addProperty("reason", r);
-                body.addProperty("user", banner.getSingle(e));
-            }
-            TebexAPI.api("bans", "POST", body);
-        } catch (IOException ex) {
-            throw new RuntimeException(ex);
+        }
+        else{
+            Skript.error("Invalid Tebex Secret. Edit in config.yml");
         }
     }
 
     @Override
-    public String toString(@Nullable Event e, boolean debug) {
+    public @NotNull String toString(@Nullable Event e, boolean debug) {
         return "create tebex ban";
     }
 }

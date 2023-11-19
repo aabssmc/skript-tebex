@@ -16,9 +16,11 @@ public final class SkriptTebex extends JavaPlugin implements CommandExecutor {
     private static SkriptTebex instance;
     private SkriptAddon addon;
 
+    public static boolean secretvalid;
+
     @Override
     public void onEnable() {
-        getCommand("skuishy").setExecutor(this);
+        getCommand("skript-tebex").setExecutor(this);
         Metrics metrics = new Metrics(this, 20162);
         instance = this;
         try {
@@ -53,6 +55,15 @@ public final class SkriptTebex extends JavaPlugin implements CommandExecutor {
             if (sender.hasPermission("skripttebex.reload")){
                 reloadConfig();
                 sender.sendMessage(ChatColor.GREEN + "Reload successful!");
+                String secret = (String) SkriptTebex.getPlugin(SkriptTebex.class).getConfig().get("tebex-secret");
+                try {
+                    if (!TebexAPI.isSecretValid(secret)){
+                        sender.sendMessage(ChatColor.RED + "Invalid Tebex secret");
+                        secretvalid = false;
+                    }
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
             }
             else{
                 sender.sendMessage(ChatColor.RED + "No permission.");

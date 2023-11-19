@@ -13,6 +13,8 @@ import org.jetbrains.annotations.NotNull;
 import javax.annotation.Nullable;
 import java.io.IOException;
 
+import static lol.aabss.skripttebex.SkriptTebex.secretvalid;
+
 public class EffTebexPayment extends Effect {
 
     static{
@@ -39,23 +41,28 @@ public class EffTebexPayment extends Effect {
 
     @Override
     protected void execute(@NotNull Event e) {
-        try {
-            String n = null;
-            if (note.getSingle(e) == null) {
-                n = "Skript payment";
+        if (secretvalid){
+            try {
+                String n;
+                if (note.getSingle(e) == null) {
+                    n = "Skript payment";
+                }
+                else{
+                    n = note.getSingle(e);
+                }
+                JsonObject body = new JsonObject();
+                body.addProperty("note", n);
+                body.addProperty("options", options.getSingle(e));
+                body.addProperty("price", price.getSingle(e));
+                body.addProperty("player", player.getSingle(e));
+                body.addProperty("id", packageid.getSingle(e));
+                TebexAPI.api("payments", "POST", body);
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
             }
-            else{
-                n = note.getSingle(e);
-            }
-            JsonObject body = new JsonObject();
-            body.addProperty("note", n);
-            body.addProperty("options", options.getSingle(e));
-            body.addProperty("price", price.getSingle(e));
-            body.addProperty("player", player.getSingle(e));
-            body.addProperty("id", packageid.getSingle(e));
-            TebexAPI.api("payments", "POST", body);
-        } catch (IOException ex) {
-            throw new RuntimeException(ex);
+        }
+        else{
+            Skript.error("Invalid Tebex Secret. Edit in config.yml");
         }
     }
 

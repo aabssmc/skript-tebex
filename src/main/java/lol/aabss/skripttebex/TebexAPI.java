@@ -4,9 +4,6 @@ package lol.aabss.skripttebex;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import org.bukkit.Material;
-import org.bukkit.inventory.ItemStack;
-import org.jetbrains.annotations.Nullable;
 
 import java.io.*;
 import java.net.HttpURLConnection;
@@ -59,6 +56,14 @@ public class TebexAPI {
             return JsonParser.parseString(response.toString()).getAsJsonObject();
         }
         return null;
+    }
+
+    public static boolean isSecretValid(String secret) throws IOException{
+        URL url = new URL("https://plugin.tebex.io/information");
+        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+        connection.setRequestMethod("GET");
+        connection.setRequestProperty("X-Tebex-Secret", secret);
+        return connection.getResponseCode() == 200;
     }
 
 }
