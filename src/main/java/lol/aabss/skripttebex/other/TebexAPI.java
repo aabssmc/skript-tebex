@@ -1,9 +1,10 @@
 // https://docs.tebex.io/plugin/
 
-package lol.aabss.skripttebex;
+package lol.aabss.skripttebex.other;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import lol.aabss.skripttebex.SkriptTebex;
 
 import java.io.*;
 import java.net.HttpURLConnection;

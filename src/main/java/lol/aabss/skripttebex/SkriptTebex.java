@@ -2,6 +2,7 @@ package lol.aabss.skripttebex;
 
 import ch.njol.skript.Skript;
 import ch.njol.skript.SkriptAddon;
+import lol.aabss.skripttebex.other.TebexAPI;
 import net.md_5.bungee.api.ChatColor;
 import org.bstats.bukkit.Metrics;
 import org.bukkit.command.Command;
