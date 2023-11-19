@@ -1,0 +1,4 @@
+name: skript-tebex
+version: '${version}'
+main: lol.aabss.skripttebex.SkriptTebex
+api-version: '1.18'
