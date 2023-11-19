@@ -17,7 +17,7 @@ public class EffTebexPayment extends Effect {
 
     static{
         Skript.registerEffect(EffTebexPayment.class,
-                "(create|make) [a [new]] tebex payment (from|with) [package id] %number% with options %string% with price %integer% as player %string% [with note %-string%]"
+                "(create|make) [a [new]] tebex payment (from|with) package [id] %number% with options %string% with price %integer% as player %string% [with note %-string%]"
         );
     }
 
