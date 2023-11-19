@@ -2,7 +2,6 @@ package lol.aabss.skripttebex;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import lol.aabss.skripttebex.SkriptTebex;
 
 import java.io.BufferedReader;
 import java.io.IOException;
