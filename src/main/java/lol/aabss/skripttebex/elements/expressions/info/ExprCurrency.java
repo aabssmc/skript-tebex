@@ -33,7 +33,7 @@ public class ExprCurrency extends SimpleExpression<String> {
     static{
         Skript.registerExpression(
                 ExprCurrency.class, String.class, ExpressionType.SIMPLE,
-                "[the] tebex currency [as] (:symbol|iso[[( |_)]4217])"
+                "[the] (tebex|buycraft[x]) currency [as] (:symbol|iso[[( |_)]4217])"
         );
     }
 

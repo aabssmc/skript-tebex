@@ -21,8 +21,8 @@ public class ExprTebexBanList extends SimpleExpression<String> {
 
     static{
         Skript.registerExpression(ExprTebexBanList.class, String.class, ExpressionType.SIMPLE,
-                "[the] tebex ban[( |-)]list",
-                "[all] [the] banned tebex users"
+                "[the] (tebex|buycraft[x]) ban[( |-)]list",
+                "[all] [the] banned (tebex|buycraft[x]) users"
         );
     }
 

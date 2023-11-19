@@ -30,7 +30,7 @@ public class ExprServerName extends SimpleExpression<String> {
     static{
         Skript.registerExpression(
                 ExprServerName.class, String.class, ExpressionType.SIMPLE,
-                "[the] tebex server name"
+                "[the] (tebex|buycraft[x]) server name"
         );
     }
 

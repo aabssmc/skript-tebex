@@ -30,7 +30,7 @@ public class ExprAccountName extends SimpleExpression<String> {
     static{
         Skript.registerExpression(
                 ExprAccountName.class, String.class, ExpressionType.SIMPLE,
-                "[the] tebex account name"
+                "[the] (tebex|buycraft[x]) account name"
         );
     }
 

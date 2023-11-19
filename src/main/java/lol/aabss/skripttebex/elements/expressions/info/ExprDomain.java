@@ -30,7 +30,7 @@ public class ExprDomain extends SimpleExpression<String> {
     static{
         Skript.registerExpression(
                 ExprDomain.class, String.class, ExpressionType.SIMPLE,
-                "[the] tebex (domain|url)"
+                "[the] (tebex|buycraft[x]) (domain|url)"
         );
     }
 

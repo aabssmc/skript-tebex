@@ -30,7 +30,7 @@ public class ExprOnlineMode extends SimpleExpression<Boolean> {
     static{
         Skript.registerExpression(
                 ExprOnlineMode.class, Boolean.class, ExpressionType.SIMPLE,
-                "[the] tebex online mode [status]"
+                "[the] (tebex|buycraft[x]) online mode [status]"
         );
     }
 

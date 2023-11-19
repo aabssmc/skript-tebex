@@ -30,7 +30,7 @@ public class ExprServerID extends SimpleExpression<Integer> {
     static{
         Skript.registerExpression(
                 ExprServerID.class, Integer.class, ExpressionType.SIMPLE,
-                "[the] tebex server id[entification] [number]"
+                "[the] (tebex|buycraft[x]) server id[entification] [number]"
         );
     }
 

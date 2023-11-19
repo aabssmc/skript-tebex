@@ -30,7 +30,7 @@ public class EffCheckoutURL extends Effect {
 
     static{
         Skript.registerEffect(EffCheckoutURL.class,
-                "(create|make) [a [new]] [tebex] checkout url with package [id] %string% as [player] %string% and store it in %object%"
+                "(create|make) [a [new]] [tebex|buycraft[x]] checkout url with package [id] %string% as [player] %string% and store it in %object%"
         );
     }
 

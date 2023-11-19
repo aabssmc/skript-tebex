@@ -30,8 +30,8 @@ public class EffTebexBan extends Effect {
 
     static {
         Skript.registerEffect(EffTebexBan.class,
-                "(create|make) [a [new]] tebex ban for %string% [with reason %-string%]",
-                "(create|make) [a [new]] tebex ip[(-| )]ban for %string% [with reason %-string%]"
+                "(create|make) [a [new]] (tebex|buycraft[x]) ban for %string% [with reason %-string%]",
+                "(create|make) [a [new]] (tebex|buycraft[x]) ip[(-| )]ban for %string% [with reason %-string%]"
         );
     }
 
