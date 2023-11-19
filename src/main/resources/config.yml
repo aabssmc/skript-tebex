@@ -3,3 +3,8 @@
 # DO NOT SHARE THIS WITH ANYONE!
 # https://docs.tebex.io/creators/faq#how-can-i-find-my-secret-key
 tebex-secret: 'INSERT-TEBEX-KEY-HERE'
+
+
+# The amount of minutes it takes for a purchase check to happen
+# 2 is default by BuycraftX standards (Might be called incorrectly the first time)
+tebex-listener: 2
