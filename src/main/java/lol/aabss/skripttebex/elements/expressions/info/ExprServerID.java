@@ -34,6 +34,7 @@ public class ExprServerID extends SimpleExpression<Integer> {
         );
     }
 
+    @SuppressWarnings("DataFlowIssue")
     @Override
     protected Integer @NotNull [] get(@NotNull Event e) {
         try {

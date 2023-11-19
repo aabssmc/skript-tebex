@@ -40,6 +40,7 @@ public class EffTebexPayment extends Effect {
     Expression<String> player;
     Expression<String> note;
 
+    @SuppressWarnings("unchecked")
     @Override
     public boolean init(Expression<?> @NotNull [] exprs, int matchedPattern, @NotNull Kleenean isDelayed, SkriptParser.@NotNull ParseResult parseResult) {
         packageid = (Expression<Number>) exprs[0];

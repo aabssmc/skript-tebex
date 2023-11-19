@@ -68,6 +68,7 @@ public class EffCheckoutURL extends Effect {
         return "checkout url";
     }
 
+    @SuppressWarnings("unchecked")
     @Override
     public boolean init(Expression<?> @NotNull [] exprs, int matchedPattern, @NotNull Kleenean isDelayed, SkriptParser.@NotNull ParseResult parseResult) {
         id = (Expression<String>) exprs[0];

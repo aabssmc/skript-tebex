@@ -39,6 +39,7 @@ public class ExprCurrency extends SimpleExpression<String> {
 
     boolean symbol;
 
+    @SuppressWarnings("DataFlowIssue")
     @Override
     protected String @NotNull [] get(@NotNull Event e) {
         try {

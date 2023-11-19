@@ -9,6 +9,7 @@ import lol.aabss.skripttebex.SkriptTebex;
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 
 public class TebexAPI {
     public static JsonObject api(String endpoint, String method) throws IOException {
@@ -41,7 +42,7 @@ public class TebexAPI {
         connection.setDoOutput(true);
         if (body != null) {
             try (OutputStream os = connection.getOutputStream()) {
-                byte[] input = body.toString().getBytes("utf-8");
+                byte[] input = body.toString().getBytes(StandardCharsets.UTF_8);
                 os.write(input, 0, input.length);
             }
         }

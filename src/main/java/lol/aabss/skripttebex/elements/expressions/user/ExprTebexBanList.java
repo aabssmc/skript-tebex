@@ -26,6 +26,7 @@ public class ExprTebexBanList extends SimpleExpression<String> {
         );
     }
 
+    @SuppressWarnings("NullableProblems")
     @Override
     protected @Nullable String[] get(@NotNull Event e) {
         try {

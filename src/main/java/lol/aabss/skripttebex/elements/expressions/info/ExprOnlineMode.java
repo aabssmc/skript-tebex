@@ -34,6 +34,7 @@ public class ExprOnlineMode extends SimpleExpression<Boolean> {
         );
     }
 
+    @SuppressWarnings("DataFlowIssue")
     @Override
     protected Boolean @NotNull [] get(@NotNull Event e) {
         try {

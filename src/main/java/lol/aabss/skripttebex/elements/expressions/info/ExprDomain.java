@@ -34,6 +34,7 @@ public class ExprDomain extends SimpleExpression<String> {
         );
     }
 
+    @SuppressWarnings("DataFlowIssue")
     @Override
     protected String @NotNull [] get(@NotNull Event e) {
         try {

@@ -11,6 +11,7 @@ public class TebexPurchase extends JavaPlugin {
 
     public JsonObject sales;
 
+    @SuppressWarnings("DataFlowIssue")
     @Override
     public void onEnable() {
         int mins = (int) SkriptTebex.getPlugin(SkriptTebex.class).getConfig().get("tebex-listener");
