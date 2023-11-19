@@ -18,7 +18,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.io.IOException;
 
-@Name("Tebex - Currency")
+@Name("Currency")
 @Description("Gets the tebex currency")
 @Examples({
         "send tebex currency symbol # $",
@@ -26,7 +26,7 @@ import java.io.IOException;
         "send tebex currency iso 4217 # USD",
         "send tebex currency iso # USD"
 })
-@Since("1.6")
+@Since("1.0")
 
 public class ExprCurrency extends SimpleExpression<String> {
 

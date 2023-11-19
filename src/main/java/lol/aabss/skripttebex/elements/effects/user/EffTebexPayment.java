@@ -1,6 +1,10 @@
 package lol.aabss.skripttebex.elements.effects.user;
 
 import ch.njol.skript.Skript;
+import ch.njol.skript.doc.Description;
+import ch.njol.skript.doc.Examples;
+import ch.njol.skript.doc.Name;
+import ch.njol.skript.doc.Since;
 import ch.njol.skript.lang.Effect;
 import ch.njol.skript.lang.Expression;
 import ch.njol.skript.lang.SkriptParser;
@@ -15,11 +19,18 @@ import java.io.IOException;
 
 import static lol.aabss.skripttebex.SkriptTebex.secretvalid;
 
+@Name("Tebex Payment")
+@Description("Makes a payment to the tebex store.")
+@Examples({
+        "make a new tebex payment from package id 123 with options \"something here\" with price 0 as player \"aabss\" with note \"happy birthday!!!\""
+})
+@Since("1.0")
+
 public class EffTebexPayment extends Effect {
 
     static{
         Skript.registerEffect(EffTebexPayment.class,
-                "(create|make) [a [new]] tebex payment (from|with) package [id] %number% with options %string% with price %integer% as player %string% [with note %-string%]"
+                "(create|make) [a [new]] [tebex] payment (from|with) package [id] %number% with options %string% with price %integer% as player %string% [with note %-string%]"
         );
     }
 

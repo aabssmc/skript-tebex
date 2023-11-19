@@ -18,12 +18,12 @@ import org.jetbrains.annotations.Nullable;
 
 import java.io.IOException;
 
-@Name("Tebex - Account Name")
+@Name("Account Name")
 @Description("Gets the tebex account name")
 @Examples({
         "send tebex account name"
 })
-@Since("1.6")
+@Since("1.0")
 
 public class ExprAccountName extends SimpleExpression<String> {
 

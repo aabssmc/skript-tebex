@@ -18,12 +18,12 @@ import org.jetbrains.annotations.Nullable;
 
 import java.io.IOException;
 
-@Name("Tebex - Online Mode")
+@Name("Online Mode")
 @Description("Gets the online mode of tebex")
 @Examples({
         "send tebex online mode"
 })
-@Since("1.6")
+@Since("1.0")
 
 public class ExprOnlineMode extends SimpleExpression<Boolean> {
 

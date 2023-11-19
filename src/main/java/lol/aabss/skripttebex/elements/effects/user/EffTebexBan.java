@@ -1,6 +1,10 @@
 package lol.aabss.skripttebex.elements.effects.user;
 
 import ch.njol.skript.Skript;
+import ch.njol.skript.doc.Description;
+import ch.njol.skript.doc.Examples;
+import ch.njol.skript.doc.Name;
+import ch.njol.skript.doc.Since;
 import ch.njol.skript.lang.Effect;
 import ch.njol.skript.lang.Expression;
 import ch.njol.skript.lang.SkriptParser;
@@ -14,6 +18,13 @@ import javax.annotation.Nullable;
 import java.io.IOException;
 
 import static lol.aabss.skripttebex.SkriptTebex.secretvalid;
+
+@Name("Ban User")
+@Description("Bans a user from the tebex store")
+@Examples({
+        "make a new tebex ban for \"Hackerboy420\" with reason \"Refunding payments\""
+})
+@Since("1.0")
 
 public class EffTebexBan extends Effect {
 

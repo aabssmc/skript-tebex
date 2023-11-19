@@ -18,12 +18,12 @@ import org.jetbrains.annotations.Nullable;
 
 import java.io.IOException;
 
-@Name("Tebex - Domain")
+@Name("Domain")
 @Description("Gets the tebex domain/url")
 @Examples({
         "send tebex domain # example.tebex.io"
 })
-@Since("1.6")
+@Since("1.0")
 
 public class ExprDomain extends SimpleExpression<String> {
 

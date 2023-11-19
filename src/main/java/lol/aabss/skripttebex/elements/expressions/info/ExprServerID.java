@@ -18,12 +18,12 @@ import org.jetbrains.annotations.Nullable;
 
 import java.io.IOException;
 
-@Name("Tebex - Server ID")
+@Name("Server ID")
 @Description("Gets the tebex server id")
 @Examples({
         "send tebex server id"
 })
-@Since("1.6")
+@Since("1.0")
 
 public class ExprServerID extends SimpleExpression<Integer> {
 
