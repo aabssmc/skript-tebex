@@ -11,6 +11,8 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public final class SkriptTebex extends JavaPlugin implements CommandExecutor {
 
@@ -22,6 +24,7 @@ public final class SkriptTebex extends JavaPlugin implements CommandExecutor {
     @Override
     public void onEnable() {
         getCommand("skript-tebex").setExecutor(this);
+        getCommand("skript-tebex").setTabCompleter(this);
         Metrics metrics = new Metrics(this, 20162);
         instance = this;
         try {
@@ -79,4 +82,19 @@ public final class SkriptTebex extends JavaPlugin implements CommandExecutor {
         }
         return super.onCommand(sender, command, label, args);
     }
+
+    @Override
+    public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {
+        List<String> completions = new ArrayList<>();
+        if (args.length == 1) {
+            completions.add("reload");
+            completions.add("version");
+        }
+        return completions;
+    }
 }
+
+
+
+
+// yey line 100!!!!
