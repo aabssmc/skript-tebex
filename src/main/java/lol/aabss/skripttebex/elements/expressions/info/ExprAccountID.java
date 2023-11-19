@@ -13,8 +13,7 @@ import ch.njol.util.Kleenean;
 import com.google.gson.JsonObject;
 import lol.aabss.skripttebex.other.TebexAPI;
 import org.bukkit.event.Event;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
+import javax.annotation.Nullable;
 
 import java.io.IOException;
 
@@ -36,7 +35,7 @@ public class ExprAccountID extends SimpleExpression<Integer> {
 
     @SuppressWarnings("DataFlowIssue")
     @Override
-    protected Integer @NotNull [] get(@NotNull Event e) {
+    protected Integer [] get(Event e) {
         try {
             JsonObject api = TebexAPI.api("information", "GET");
             if (api == null){
@@ -59,17 +58,17 @@ public class ExprAccountID extends SimpleExpression<Integer> {
     }
 
     @Override
-    public @NotNull Class<? extends Integer> getReturnType() {
+    public Class<? extends Integer> getReturnType() {
         return Integer.class;
     }
 
     @Override
-    public @NotNull String toString(@Nullable Event e, boolean debug) {
+    public String toString(@Nullable Event e, boolean debug) {
         return "tebex account id";
     }
 
     @Override
-    public boolean init(Expression<?> @NotNull [] exprs, int matchedPattern, @NotNull Kleenean isDelayed, SkriptParser.@NotNull ParseResult parseResult) {
+    public boolean init(Expression<?> [] exprs, int matchedPattern, Kleenean isDelayed, SkriptParser.ParseResult parseResult) {
         return true;
     }
 }

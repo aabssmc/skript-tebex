@@ -11,7 +11,6 @@ import ch.njol.util.Kleenean;
 import com.google.gson.JsonObject;
 import lol.aabss.skripttebex.other.TebexAPI;
 import org.bukkit.event.Event;
-import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 import java.io.IOException;
@@ -39,7 +38,7 @@ public class EffCheckoutURL extends Effect {
     Variable<?> var;
 
     @Override
-    protected void execute(@NotNull Event e) {
+    protected void execute(Event e) {
         if (secretvalid){
             try {
                 JsonObject body = new JsonObject();
@@ -64,13 +63,13 @@ public class EffCheckoutURL extends Effect {
     }
 
     @Override
-    public @NotNull String toString(@Nullable Event e, boolean debug) {
+    public String toString(@Nullable Event e, boolean debug) {
         return "checkout url";
     }
 
     @SuppressWarnings("unchecked")
     @Override
-    public boolean init(Expression<?> @NotNull [] exprs, int matchedPattern, @NotNull Kleenean isDelayed, SkriptParser.@NotNull ParseResult parseResult) {
+    public boolean init(Expression<?> [] exprs, int matchedPattern, Kleenean isDelayed, SkriptParser.ParseResult parseResult) {
         id = (Expression<String>) exprs[0];
         player = (Expression<String>) exprs[1];
         if (exprs[2] instanceof Variable<?>){

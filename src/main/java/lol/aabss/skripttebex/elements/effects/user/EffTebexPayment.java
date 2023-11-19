@@ -12,7 +12,6 @@ import ch.njol.util.Kleenean;
 import com.google.gson.JsonObject;
 import lol.aabss.skripttebex.other.TebexAPI;
 import org.bukkit.event.Event;
-import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 import java.io.IOException;
@@ -42,7 +41,7 @@ public class EffTebexPayment extends Effect {
 
     @SuppressWarnings("unchecked")
     @Override
-    public boolean init(Expression<?> @NotNull [] exprs, int matchedPattern, @NotNull Kleenean isDelayed, SkriptParser.@NotNull ParseResult parseResult) {
+    public boolean init(Expression<?> [] exprs, int matchedPattern, Kleenean isDelayed, SkriptParser.ParseResult parseResult) {
         packageid = (Expression<Number>) exprs[0];
         options = (Expression<String>) exprs[1];
         price = (Expression<Integer>) exprs[2];
@@ -52,7 +51,7 @@ public class EffTebexPayment extends Effect {
     }
 
     @Override
-    protected void execute(@NotNull Event e) {
+    protected void execute(Event e) {
         if (secretvalid){
             try {
                 String n;
@@ -79,7 +78,7 @@ public class EffTebexPayment extends Effect {
     }
 
     @Override
-    public @NotNull String toString(@Nullable Event e, boolean debug) {
+    public String toString(@Nullable Event e, boolean debug) {
         return "create tebex payment";
     }
 }

@@ -10,7 +10,6 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import org.bukkit.event.Event;
-import org.jetbrains.annotations.NotNull;
 import lol.aabss.skripttebex.other.TebexAPI;
 
 import javax.annotation.Nullable;
@@ -28,7 +27,7 @@ public class ExprTebexBanList extends SimpleExpression<String> {
 
     @SuppressWarnings("NullableProblems")
     @Override
-    protected @Nullable String[] get(@NotNull Event e) {
+    protected @Nullable String[] get(Event e) {
         try {
             ArrayList<String> list = new ArrayList<>();
             JsonObject api = TebexAPI.api("bans", "GET");
@@ -56,17 +55,17 @@ public class ExprTebexBanList extends SimpleExpression<String> {
     }
 
     @Override
-    public @NotNull Class<? extends String> getReturnType() {
+    public Class<? extends String> getReturnType() {
         return String.class;
     }
 
     @Override
-    public @NotNull String toString(@Nullable Event e, boolean debug) {
+    public String toString(@Nullable Event e, boolean debug) {
         return "tebex ban list";
     }
 
     @Override
-    public boolean init(Expression<?> @NotNull [] exprs, int matchedPattern, @NotNull Kleenean isDelayed, SkriptParser.@NotNull ParseResult parseResult) {
+    public boolean init(Expression<?> [] exprs, int matchedPattern, Kleenean isDelayed, SkriptParser.ParseResult parseResult) {
         return true;
     }
 }

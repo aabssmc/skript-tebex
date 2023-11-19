@@ -13,8 +13,7 @@ import ch.njol.util.Kleenean;
 import com.google.gson.JsonObject;
 import lol.aabss.skripttebex.other.TebexAPI;
 import org.bukkit.event.Event;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
+import javax.annotation.Nullable;
 
 import java.io.IOException;
 
@@ -36,7 +35,7 @@ public class ExprOnlineMode extends SimpleExpression<Boolean> {
 
     @SuppressWarnings("DataFlowIssue")
     @Override
-    protected Boolean @NotNull [] get(@NotNull Event e) {
+    protected Boolean [] get(Event e) {
         try {
             JsonObject api = TebexAPI.api("information", "GET");
             if (api == null){
@@ -59,17 +58,17 @@ public class ExprOnlineMode extends SimpleExpression<Boolean> {
     }
 
     @Override
-    public @NotNull Class<? extends Boolean> getReturnType() {
+    public Class<? extends Boolean> getReturnType() {
         return Boolean.class;
     }
 
     @Override
-    public @NotNull String toString(@Nullable Event e, boolean debug) {
+    public String toString(@Nullable Event e, boolean debug) {
         return "tebex online mode";
     }
 
     @Override
-    public boolean init(Expression<?> @NotNull [] exprs, int matchedPattern, @NotNull Kleenean isDelayed, SkriptParser.@NotNull ParseResult parseResult) {
+    public boolean init(Expression<?> [] exprs, int matchedPattern, Kleenean isDelayed, SkriptParser.ParseResult parseResult) {
         return true;
     }
 }

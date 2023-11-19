@@ -12,7 +12,7 @@ import ch.njol.util.Kleenean;
 import com.google.gson.JsonObject;
 import lol.aabss.skripttebex.other.TebexAPI;
 import org.bukkit.event.Event;
-import org.jetbrains.annotations.NotNull;
+
 
 import javax.annotation.Nullable;
 import java.io.IOException;
@@ -41,7 +41,7 @@ public class EffTebexBan extends Effect {
 
     @SuppressWarnings("unchecked")
     @Override
-    public boolean init(Expression<?> @NotNull [] exprs, int matchedPattern, @NotNull Kleenean isDelayed, SkriptParser.@NotNull ParseResult parseResult) {
+    public boolean init(Expression<?>[] exprs, int matchedPattern, Kleenean isDelayed, SkriptParser.ParseResult parseResult) {
         isIP = (matchedPattern == 1);
         banner = (Expression<String>) exprs[0];
         reason = (Expression<String>) exprs[1];
@@ -49,7 +49,7 @@ public class EffTebexBan extends Effect {
     }
 
     @Override
-    protected void execute(@NotNull Event e) {
+    protected void execute(Event e) {
         if (secretvalid){
             try {
                 JsonObject body;
@@ -81,7 +81,7 @@ public class EffTebexBan extends Effect {
     }
 
     @Override
-    public @NotNull String toString(@Nullable Event e, boolean debug) {
+    public String toString(@Nullable Event e, boolean debug) {
         return "create tebex ban";
     }
 }

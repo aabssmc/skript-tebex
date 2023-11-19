@@ -2,7 +2,6 @@ package lol.aabss.skripttebex.other;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import com.google.gson.JsonPrimitive;
 import lol.aabss.skripttebex.SkriptTebex;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
