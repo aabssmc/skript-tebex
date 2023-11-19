@@ -8,7 +8,10 @@ import ch.njol.skript.doc.Since;
 import ch.njol.skript.lang.Literal;
 import ch.njol.skript.lang.SkriptEvent;
 import ch.njol.skript.lang.SkriptParser;
+import ch.njol.skript.registrations.EventValues;
+import ch.njol.skript.util.Getter;
 import lol.aabss.skripttebex.other.TebexPurchaseEvent;
+import org.bukkit.entity.Player;
 import org.bukkit.event.Event;
 import org.jetbrains.annotations.NotNull;
 
@@ -17,9 +20,8 @@ import javax.annotation.Nullable;
 @Name("On Tebex Purchase")
 @Description("Called when a purchase happens")
 @Examples({
-        "#will add event values later",
         "on tebex purchase:",
-        "\tbroadcast \"someone bought something\""
+        "\tbroadcast \"%player% bought %event-string%\""
 })
 @Since("1.0")
 
@@ -27,8 +29,20 @@ public class EvtTebexPurchase extends SkriptEvent {
 
     static{
         Skript.registerEvent("On Tebex Purchese Event", EvtTebexPurchase.class, TebexPurchaseEvent.class,
-                "[on] tebex purchase"
+                "[on] (tebex|buycraft[x]) purchase"
         );
+        EventValues.registerEventValue(TebexPurchaseEvent.class, Player.class, new Getter<Player, TebexPurchaseEvent>(){
+            @Override
+            public Player get(TebexPurchaseEvent e) {
+                return e.getPlayer();
+            }
+        },0);
+        EventValues.registerEventValue(TebexPurchaseEvent.class, String.class, new Getter<String, TebexPurchaseEvent>(){
+            @Override
+            public String get(TebexPurchaseEvent e) {
+                return e.getPackage();
+            }
+        },0);
     }
 
     @Override
